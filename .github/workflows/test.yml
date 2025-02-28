@@ -1,4 +1,4 @@
-name: Selenium Tests
+name: Playwright Tests
 
 on:
   push:
@@ -10,19 +10,20 @@ on:
 
 jobs:
   test:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set up Python
-        uses: actions/setup-python@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-          python-version: '3.9'
+          node-version: '18'  # Adjust Node.js version if needed
 
       - name: Install dependencies
         run: |
-          pip install selenium pytest
+          npm install
+          npx playwright install  # Ensures browsers are installed
 
-      - name: Run Selenium tests
-        run: pytest tests/  # Assuming test scripts are inside 'tests/' folder
+      - name: Run Playwright tests
+        run: npx playwright selenium-practice 2/practice/
