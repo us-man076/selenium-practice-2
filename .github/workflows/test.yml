@@ -26,4 +26,4 @@ jobs:
           npx playwright install  # Ensures browsers are installed
 
       - name: Run Playwright tests
-        run: npx playwright selenium-practice 2/practice/
+        run: npx playwright selenium-practice 2/practice/test.py
