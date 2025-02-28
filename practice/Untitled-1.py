@@ -23,7 +23,7 @@ def search_and_open_daraz():
         page.locator("h3").first.click()
         
         # Keep the browser open for review
-        page.wait_for_timeout(10000)  # Wait for 5 seconds
+        page.wait_for_timeout(15000)  # Wait for 5 seconds
         browser.close()
 
 # Run the function
